@@ -1,0 +1,15 @@
+runs:
+  using: composite
+  steps:
+  - run: exit 1
+    if: env.COMPOSITE_OVERRIDE != '2'
+    shell: bash
+  - run: exit 1
+    if: env.COMPOSITE != '1'
+    shell: bash
+  - run: exit 1
+    if: env.JOB != '1'
+    shell: bash
+  - run: exit 1
+    if: env.GLOBAL != '1'
+    shell: bash
