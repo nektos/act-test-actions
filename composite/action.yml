@@ -1,0 +1,23 @@
+name: test composite action
+description: test composite action
+
+inputs:
+  input:
+    description: test input
+    required: true
+
+outputs:
+  output:
+    description: test output
+    value: ${{ steps.step.outputs.output }}
+
+runs:
+  using: composite
+  steps:
+    - name: run script in composite action
+      id: step
+      run: |
+        echo "inputs.input=${{ inputs.input }}"
+        [[ -n "${{ inputs.input }}" ]] || exit 1
+        echo "::set-output name=output::${{ inputs.input }}"
+      shell: bash
