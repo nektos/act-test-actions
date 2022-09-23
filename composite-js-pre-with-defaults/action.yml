@@ -1,0 +1,23 @@
+name: "Test with pre step and defaults"
+description: "Test with pre step and defaults"
+
+inputs:
+  pre:
+    description: "Defaults are expected to be provided"
+    default: true
+  in: {}
+
+runs:
+  using: composite
+  steps:
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+      with:
+        in: ${{ inputs.in }}
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+      with:
+        pre: ${{ !inputs.pre }}
+        in: ${{ inputs.in }}
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+      with:
+        pre: ${{ inputs.pre }}
+        in: ${{ inputs.in }}
