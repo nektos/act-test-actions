@@ -1,0 +1,13 @@
+name: "Test with pre step and defaults"
+description: "Test with pre step and defaults"
+
+inputs:
+  pre:
+    description: "Defaults are expected to be provided"
+    default: true
+  in: {}
+
+runs:
+  using: "node16"
+  main: "check.js"
+  pre: "check.js"
