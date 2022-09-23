@@ -10,14 +10,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js@main
       with:
         in: ${{ inputs.in }}
-    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js@main
       with:
         pre: ${{ !inputs.pre }}
         in: ${{ inputs.in }}
-    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js
+    - uses: nektos/act-test-actions/composite-js-pre-with-defaults/js@main
       with:
         pre: ${{ inputs.pre }}
         in: ${{ inputs.in }}
