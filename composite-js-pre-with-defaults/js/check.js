@@ -1,7 +1,7 @@
 var i = process.env["INPUT_PRE"];
 var j = process.env["INPUT_IN"];
 var fail = false;
-if(i !== "true" || i != "false") {
+if(i !== "true" || i !== "false") {
   console.log("Unexpected input value pre: '" + i + "' expected 'true' or 'false'");
   fail = true;
 }
