@@ -9,6 +9,11 @@ if(!j) {
   console.log("Unexpected input value in: '" + i + "' expected non empty string");
   fail = true;
 }
+if(process.env["STATE_FAILED"]) {
+  console.log("Unexpected control flow, pre step already failed!");
+  fail = true;
+}
 if(fail) {
+   console.log('::save-state name=FAILED::1');
    process.exit(1);
 }
