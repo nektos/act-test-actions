@@ -1,0 +1,35 @@
+inputs:
+  continue-on-error:
+    default: false
+  shell:
+    default: ${{runner.os == 'windows' && (job.container && 'cmd' || 'powershell') || (job.container && 'sh' || 'bash')}}
+  shell-ext: {}
+  shell-newline: {}
+  pre: {}
+  pre-continue-on-error:
+    default: false
+  pre-if: {}
+  pre-shell: {}
+  pre-shell-ext: {}
+  pre-shell-newline: {}
+  main: {}
+  main-continue-on-error:
+    default: false
+  main-if: {}
+  main-shell: {}
+  main-shell-ext: {}
+  main-shell-newline: {}
+  post: {}
+  post-continue-on-error:
+    default: false
+  post-if: {}
+  post-shell: {}
+  post-shell-ext: {}
+  post-shell-newline: {}
+runs:
+  using: node16
+  pre: pre.js
+  pre-if: always()
+  main: main.js
+  post: post.js
+  post-if: always()
