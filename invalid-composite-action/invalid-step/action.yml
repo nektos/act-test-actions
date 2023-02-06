@@ -1,0 +1,5 @@
+runs:
+  using: composite
+  steps:
+  - name: Foo
+  - uses: Foo/Bar
