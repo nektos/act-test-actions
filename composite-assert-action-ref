@@ -1,0 +1,21 @@
+name: action_ref example
+description: action_ref example
+runs:
+  using: composite
+  steps:
+    - env:
+        CTX: ${{ tojson(github) }}
+      run: env
+      shell: bash
+    - env:
+        action_ref: ${{ github.action_ref }}
+      run: |
+        echo "action_ref=$action_ref"
+        [[ -n "$action_ref" ]] || exit 1
+      shell: bash
+    - env:
+        action_repository: ${{ github.action_repository }}
+      run: |
+        echo "action_repository=$action_repository"
+        [[ -n "$action_repository" ]] || exit 1
+      shell: bash
