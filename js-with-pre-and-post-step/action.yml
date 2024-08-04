@@ -13,6 +13,6 @@ runs:
   using: "node16"
   main: "main.js"
   pre: "pre.js"
-  pre-if: "${{ inputs.pre == 'true' }}"
+  pre-if: "inputs.pre == 'true'"
   post: "post.js"
-  post-if: "${{ inputs.post == 'true' }}"
+  post-if: "inputs.post == 'true'"
